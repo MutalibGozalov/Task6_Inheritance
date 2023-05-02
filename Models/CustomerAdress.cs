@@ -7,11 +7,19 @@ namespace TaskInheritance.Models
 {
     public class CustomerAdress : Contact
     {
-        public string Country { get; set; }
-        public string City { get; set; }
-        public string Town { get; set; }
-        public string Street { get; set; }
-        public int Building { get; set; }
-        public int No { get; set; }
+        public CustomerAdress(int id, string title, string country, string city, string town, string street, int buildingNo) : base(id, title)
+        {
+            Country = country;
+            City = city;
+            Town = town;
+            Street = street;
+            BuildingNo = buildingNo;
+        }
+
+        public string Country { get; set; } = null!;
+        public string City { get; set; } = null!;
+        public string Town { get; set; } = null!;
+        public string Street { get; set; } = null!;
+        public int BuildingNo { get; set; }
     }
 }

@@ -5,11 +5,17 @@ using System.Threading.Tasks;
 
 namespace TaskInheritance.Models
 {
-    public class Shipper
+    public class Shipper : BaseEntity
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Phone { get; set; }
-        public string ShipperMail { get; set; }
+        public Shipper(int id, string name, string phone, string shipperMail) : base(id)
+        {
+            Name = name;
+            Phone = phone;
+            ShipperMail = shipperMail;
+        }
+
+        public string Name { get; set; } = null!;
+        public string Phone { get; set; } = null!;
+        public string ShipperMail { get; set; } = null!;
     }
 }

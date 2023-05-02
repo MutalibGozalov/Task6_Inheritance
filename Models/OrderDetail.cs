@@ -5,15 +5,24 @@ using System.Threading.Tasks;
 
 namespace TaskInheritance.Models
 {
-    public class OrderDetail
+    public class OrderDetail  : BaseEntity
     {
-        public int Id { get; set; }
+        public OrderDetail(int id, int orderId, int productId, string productSKU, double price, int count, Discount? discount) : base(id)
+        {
+            OrderId = orderId;
+            ProductId = productId;
+            ProductSKU = productSKU;
+            Price = price;
+            Count = count;
+            Discount = discount;
+        }
+
         public int OrderId { get; set; }
         public int ProductId { get; set; }
-        public string ProductSKU { get; set; }
+        public string ProductSKU { get; set; } = null!;
         public double Price { get; set; }
         public int Count { get; set; }
-        public int DiscountId { get; set; }
-        //public Discount Discount { get; set; }
+        public Discount? Discount { get; set; }
+         // public int DiscountId { get; set; }
     }
 }

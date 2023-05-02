@@ -5,13 +5,17 @@ using System.Threading.Tasks;
 
 namespace TaskInheritance.Models
 {
-    public class Category
+    public class Category : BaseEntity
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int ParentCategoryId { get; set; }
-        //public Category ParentCategory { get; set; }
-        
+        public Category(int id, string name, string? description, Product[] products) : base(id)
+        {
+            Name = name;
+            Description = description;
+            Products = products;
+        }
+
+        public string Name { get; set; } = null!;
+        public string? Description { get; set; }
+        public Product[] Products { get; set; }  = null!;
     }
 }

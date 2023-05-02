@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace TaskInheritance.Models
 {
-    public class Contact : BaseEntity
+    public class BaseEntity
     {
-        public string? Title { get; set; }
+        public int Id { get; set; }
 
-        public Contact(int id, string? title) : base(id)
+        public BaseEntity(int id)
         {
-            Title = title;
+            Id = id;
         }
     }
 }

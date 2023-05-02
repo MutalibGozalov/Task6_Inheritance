@@ -7,6 +7,10 @@ namespace TaskInheritance.Models
 {
     public class CustomerMail : Contact
     {
-        public string Mail { get; set; }
+        public CustomerMail(int id, string title, string mail) : base(id, title)
+        {
+            this.Mail = mail;
+        }
+        public string Mail { get; set; } = null!;
     }
 }
